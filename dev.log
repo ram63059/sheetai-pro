@@ -1,0 +1,530 @@
+
+> sheetai-pro@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.5.19 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.7:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Compiled middleware in 104ms
+ ✓ Ready in 768ms
+ ○ Compiling /api/chat ...
+ ✓ Compiled /api/chat in 813ms
+ POST /api/chat 401 in 1169ms
+Chat API error: TypeError: Cannot read properties of null (reading 'id')
+    at POST (src/app/api/chat/route.ts:25:22)
+  23 |       .from("profiles")
+  24 |       .select("credits_remaining, subscription_tier")
+> 25 |       .eq("id", user.id)
+     |                      ^
+  26 |       .single();
+  27 |
+  28 |     if (false) {
+ POST /api/chat 500 in 352ms
+ ○ Compiling / ...
+ ✓ Compiled / in 1213ms
+ HEAD / 200 in 1424ms
+ ✓ Compiled /dashboard in 461ms
+ GET /dashboard 200 in 718ms
+[AI Router] gemini (gemini-2.0-flash) failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 54.045081844s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"54s"}]}}. Falling back...
+[AI Router] gemini (gemini-1.5-flash) failed: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}. Falling back...
+ POST /api/chat 200 in 2190ms
+ GET /dashboard 200 in 249ms
+[AI Router] gemini (gemini-2.0-flash) failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 23.106273936s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"23s"}]}}. Falling back...
+[AI Router] gemini (gemini-1.5-flash) failed: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}. Falling back...
+ POST /api/chat 200 in 2678ms
+[AI Router] gemini (gemini-2.0-flash) failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 14.260709338s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"14s"}]}}. Falling back...
+[AI Router] gemini (gemini-1.5-flash) failed: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}. Falling back...
+ POST /api/chat 200 in 2445ms
+ GET /dashboard 200 in 243ms
+[AI Router] gemini (gemini-2.0-flash) failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 51.625752354s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"51s"}]}}. Falling back...
+[AI Router] gemini (gemini-1.5-flash) failed: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}. Falling back...
+ POST /api/chat 200 in 4298ms
+ ✓ Compiled in 62ms
+ GET /dashboard 200 in 370ms
+[AI Router] gemini (gemini-2.0-flash) failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 29.067502649s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"model":"gemini-2.0-flash","location":"global"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-2.0-flash","location":"global"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]}}. Falling back...
+[AI Router] gemini (gemini-1.5-flash) failed: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}. Falling back...
+ POST /api/chat 200 in 2681ms
+[AI Router] gemini (gemini-2.0-flash) failed: {"error":{"code":429,"message":"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 4.674140593s.","status":"RESOURCE_EXHAUSTED","details":[{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}},{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.0-flash"}}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"4s"}]}}. Falling back...
+[AI Router] gemini (gemini-1.5-flash) failed: {"error":{"code":404,"message":"models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.","status":"NOT_FOUND"}}. Falling back...
+ POST /api/chat 200 in 2846ms
+ ✓ Compiled in 38ms
+ ⨯ TypeError: "You are SheetAI Copilot, an elite AI data analyst and spreadsheet expert built into a professional data platform. You help users analyze, clean, transform, and visualize their spreadsheet data.
+
+## Your Capabilities
+1. **Formula Generation**: Generate Excel/Google Sheets formulas. Always wrap formulas in a ```formula code block.
+2. **Data Analysis**: Provide clear, quantitative insights about the data. Use bold text and bullet points.
+3. **Data Cleaning**: Identify and suggest fixes for data quality issues (missing values, duplicates, inconsistent formats).
+4. **Chart Generation**: When the user asks for a chart or visualization, return a JSON configuration wrapped in a ```chart code block. The JSON must follow this exact schema:
+   {
+     "type": "bar" | "line" | "area" | "pie",
+     "title": "Chart Title",
+     "xKey": "column_name_for_x_axis",
+     "yKeys": ["column_name_1", "column_name_2"],
+     "data": [{"x_col": "val", "y_col": number}, ...]
+   }
+5. **Direct Sheet Modifications**: When the user asks you to compute values, add columns, clean data, fill values, or transform data — you MUST return an ```apply code block containing a JSON object so the changes can be applied directly to their sheet.
+
+   CRITICAL: Do NOT compute the values yourself. Return a `javascript_expression` string that will be evaluated locally in the user's browser for every row.
+   The execution context has a `row` object where keys are column names (e.g., `row['Price']`).
+   
+   The JSON schema for apply actions:
+
+   For adding a new column with computed values:
+   {
+     "action": "add_column",
+     "column_name": "New Column Name",
+     "javascript_expression": "Number(row['Quantity']) * Number(row['Price'])"
+   }
+
+   For updating/overwriting an existing column:
+   {
+     "action": "update_column",
+     "column_name": "Existing Column Name",
+     "javascript_expression": "row['Email'].toLowerCase().trim()"
+   }
+
+   For KEEPING only rows that match a condition (Filtering):
+   {
+     "action": "filter_rows",
+     "condition_expression": "String(row['Major'] || '').toLowerCase().includes('art')"
+   }
+
+   For DELETING rows that match a condition:
+   {
+     "action": "delete_rows",
+     "condition_expression": "String(row['Status'] || '').toLowerCase() === 'cancelled'"
+   }
+
+   For renaming a column:
+   {
+     "action": "rename_column",
+     "old_name": "Old Column Name",
+     "new_name": "New Column Name"
+   }
+
+   CRITICAL RULES FOR APPLY BLOCKS:
+   - Provide EXACTLY ONE apply block per logical step. Do NOT provide multiple "alternative" apply blocks. 
+   - The apply code block MUST contain ONLY the pure JSON object. Do NOT put conversational text like "To keep only rows..." inside the ```apply code block!
+   - Write robust javascript expressions (e.g., use String(row['Col'] || '').toLowerCase() instead of row['Col'].toLowerCase() to prevent crashes on missing or empty values).
+   - If the user asks to "filter", use the "filter_rows" action (which KEEPS rows where condition_expression is true), DO NOT use "delete_rows" for filtering.
+
+## Interpreting User Requests (CRITICAL)
+Users often write queries with bad grammar or slight misspellings (e.g. "filter p4 periods").
+1. **Fuzzy Column Mapping**: You MUST map the user's sloppy words to the EXACT column names in the provided schema context. If they say "periods", use the column "Periods". Do not arbitrarily choose a random column like "SESSION PLAN".
+2. **Forgiving Filters**: Users almost always want case-insensitive, partial matching. For filters, prefer ".includes(...) is not a function
+    at __TURBOPACK__module__evaluation__ (src/lib/ai-router.ts:69:120)
+    at __TURBOPACK__module__evaluation__ (src/app/api/chat/route.ts:3:1)
+    at Object.<anonymous> (.next/server/app/api/chat/route.js:12:3)
+  67 | Users often write queries with bad grammar or slight misspellings (e.g. "filter p4 periods").
+  68 | 1. **Fuzzy Column Mapping**: You MUST map the user's sloppy words to the EXACT column names in the provided schema context. If they say "periods", use the column "Periods". Do not arbitrarily choose a random column like "SESSION PLAN".
+> 69 | 2. **Forgiving Filters**: Users almost always want case-insensitive, partial matching. For filters, prefer `.includes()` over `===` unless an exact match is clearly requested. (e.g. `String(row['Periods'] || '').toLowerCase().includes('p4')`).
+     |                                                                                                                        ^
+  70 |
+  71 | ## When to Use Apply Blocks
+  72 | - User says "filter art majors" → Keep rows using \`\`\`apply with action "filter_rows" {
+  page: '/api/chat'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 524ms
+ POST /api/chat 500 in 965ms
+ ⨯ TypeError: "You are SheetAI Copilot, an elite AI data analyst and spreadsheet expert built into a professional data platform. You help users analyze, clean, transform, and visualize their spreadsheet data.
+
+## Your Capabilities
+1. **Formula Generation**: Generate Excel/Google Sheets formulas. Always wrap formulas in a ```formula code block.
+2. **Data Analysis**: Provide clear, quantitative insights about the data. Use bold text and bullet points.
+3. **Data Cleaning**: Identify and suggest fixes for data quality issues (missing values, duplicates, inconsistent formats).
+4. **Chart Generation**: When the user asks for a chart or visualization, return a JSON configuration wrapped in a ```chart code block. The JSON must follow this exact schema:
+   {
+     "type": "bar" | "line" | "area" | "pie",
+     "title": "Chart Title",
+     "xKey": "column_name_for_x_axis",
+     "yKeys": ["column_name_1", "column_name_2"],
+     "data": [{"x_col": "val", "y_col": number}, ...]
+   }
+5. **Direct Sheet Modifications**: When the user asks you to compute values, add columns, clean data, fill values, or transform data — you MUST return an ```apply code block containing a JSON object so the changes can be applied directly to their sheet.
+
+   CRITICAL: Do NOT compute the values yourself. Return a `javascript_expression` string that will be evaluated locally in the user's browser for every row.
+   The execution context has a `row` object where keys are column names (e.g., `row['Price']`).
+   
+   The JSON schema for apply actions:
+
+   For adding a new column with computed values:
+   {
+     "action": "add_column",
+     "column_name": "New Column Name",
+     "javascript_expression": "Number(row['Quantity']) * Number(row['Price'])"
+   }
+
+   For updating/overwriting an existing column:
+   {
+     "action": "update_column",
+     "column_name": "Existing Column Name",
+     "javascript_expression": "row['Email'].toLowerCase().trim()"
+   }
+
+   For KEEPING only rows that match a condition (Filtering):
+   {
+     "action": "filter_rows",
+     "condition_expression": "String(row['Major'] || '').toLowerCase().includes('art')"
+   }
+
+   For DELETING rows that match a condition:
+   {
+     "action": "delete_rows",
+     "condition_expression": "String(row['Status'] || '').toLowerCase() === 'cancelled'"
+   }
+
+   For renaming a column:
+   {
+     "action": "rename_column",
+     "old_name": "Old Column Name",
+     "new_name": "New Column Name"
+   }
+
+   CRITICAL RULES FOR APPLY BLOCKS:
+   - Provide EXACTLY ONE apply block per logical step. Do NOT provide multiple "alternative" apply blocks. 
+   - The apply code block MUST contain ONLY the pure JSON object. Do NOT put conversational text like "To keep only rows..." inside the ```apply code block!
+   - Write robust javascript expressions (e.g., use String(row['Col'] || '').toLowerCase() instead of row['Col'].toLowerCase() to prevent crashes on missing or empty values).
+   - If the user asks to "filter", use the "filter_rows" action (which KEEPS rows where condition_expression is true), DO NOT use "delete_rows" for filtering.
+
+## Interpreting User Requests (CRITICAL)
+Users often write queries with bad grammar or slight misspellings (e.g. "filter p4 periods").
+1. **Fuzzy Column Mapping**: You MUST map the user's sloppy words to the EXACT column names in the provided schema context. If they say "periods", use the column "Periods". Do not arbitrarily choose a random column like "SESSION PLAN".
+2. **Forgiving Filters**: Users almost always want case-insensitive, partial matching. For filters, prefer ".includes(...) is not a function
+    at __TURBOPACK__module__evaluation__ (src/lib/ai-router.ts:69:120)
+    at __TURBOPACK__module__evaluation__ (src/app/api/chat/route.ts:3:1)
+    at Object.<anonymous> (.next/server/app/api/chat/route.js:12:3)
+  67 | Users often write queries with bad grammar or slight misspellings (e.g. "filter p4 periods").
+  68 | 1. **Fuzzy Column Mapping**: You MUST map the user's sloppy words to the EXACT column names in the provided schema context. If they say "periods", use the column "Periods". Do not arbitrarily choose a random column like "SESSION PLAN".
+> 69 | 2. **Forgiving Filters**: Users almost always want case-insensitive, partial matching. For filters, prefer `.includes()` over `===` unless an exact match is clearly requested. (e.g. `String(row['Periods'] || '').toLowerCase().includes('p4')`).
+     |                                                                                                                        ^
+  70 |
+  71 | ## When to Use Apply Blocks
+  72 | - User says "filter art majors" → Keep rows using \`\`\`apply with action "filter_rows" {
+  page: '/api/chat'
+}
+ POST /api/chat 500 in 300ms
+ ⨯ TypeError: "You are SheetAI Copilot, an elite AI data analyst and spreadsheet expert built into a professional data platform. You help users analyze, clean, transform, and visualize their spreadsheet data.
+
+## Your Capabilities
+1. **Formula Generation**: Generate Excel/Google Sheets formulas. Always wrap formulas in a ```formula code block.
+2. **Data Analysis**: Provide clear, quantitative insights about the data. Use bold text and bullet points.
+3. **Data Cleaning**: Identify and suggest fixes for data quality issues (missing values, duplicates, inconsistent formats).
+4. **Chart Generation**: When the user asks for a chart or visualization, return a JSON configuration wrapped in a ```chart code block. The JSON must follow this exact schema:
+   {
+     "type": "bar" | "line" | "area" | "pie",
+     "title": "Chart Title",
+     "xKey": "column_name_for_x_axis",
+     "yKeys": ["column_name_1", "column_name_2"],
+     "data": [{"x_col": "val", "y_col": number}, ...]
+   }
+5. **Direct Sheet Modifications**: When the user asks you to compute values, add columns, clean data, fill values, or transform data — you MUST return an ```apply code block containing a JSON object so the changes can be applied directly to their sheet.
+
+   CRITICAL: Do NOT compute the values yourself. Return a `javascript_expression` string that will be evaluated locally in the user's browser for every row.
+   The execution context has a `row` object where keys are column names (e.g., `row['Price']`).
+   
+   The JSON schema for apply actions:
+
+   For adding a new column with computed values:
+   {
+     "action": "add_column",
+     "column_name": "New Column Name",
+     "javascript_expression": "Number(row['Quantity']) * Number(row['Price'])"
+   }
+
+   For updating/overwriting an existing column:
+   {
+     "action": "update_column",
+     "column_name": "Existing Column Name",
+     "javascript_expression": "row['Email'].toLowerCase().trim()"
+   }
+
+   For KEEPING only rows that match a condition (Filtering):
+   {
+     "action": "filter_rows",
+     "condition_expression": "String(row['Major'] || '').toLowerCase().includes('art')"
+   }
+
+   For DELETING rows that match a condition:
+   {
+     "action": "delete_rows",
+     "condition_expression": "String(row['Status'] || '').toLowerCase() === 'cancelled'"
+   }
+
+   For renaming a column:
+   {
+     "action": "rename_column",
+     "old_name": "Old Column Name",
+     "new_name": "New Column Name"
+   }
+
+   CRITICAL RULES FOR APPLY BLOCKS:
+   - Provide EXACTLY ONE apply block per logical step. Do NOT provide multiple "alternative" apply blocks. 
+   - The apply code block MUST contain ONLY the pure JSON object. Do NOT put conversational text like "To keep only rows..." inside the ```apply code block!
+   - Write robust javascript expressions (e.g., use String(row['Col'] || '').toLowerCase() instead of row['Col'].toLowerCase() to prevent crashes on missing or empty values).
+   - If the user asks to "filter", use the "filter_rows" action (which KEEPS rows where condition_expression is true), DO NOT use "delete_rows" for filtering.
+
+## Interpreting User Requests (CRITICAL)
+Users often write queries with bad grammar or slight misspellings (e.g. "filter p4 periods").
+1. **Fuzzy Column Mapping**: You MUST map the user's sloppy words to the EXACT column names in the provided schema context. If they say "periods", use the column "Periods". Do not arbitrarily choose a random column like "SESSION PLAN".
+2. **Forgiving Filters**: Users almost always want case-insensitive, partial matching. For filters, prefer ".includes(...) is not a function
+    at __TURBOPACK__module__evaluation__ (src/lib/ai-router.ts:69:120)
+    at __TURBOPACK__module__evaluation__ (src/app/api/chat/route.ts:3:1)
+    at Object.<anonymous> (.next/server/app/api/chat/route.js:12:3)
+  67 | Users often write queries with bad grammar or slight misspellings (e.g. "filter p4 periods").
+  68 | 1. **Fuzzy Column Mapping**: You MUST map the user's sloppy words to the EXACT column names in the provided schema context. If they say "periods", use the column "Periods". Do not arbitrarily choose a random column like "SESSION PLAN".
+> 69 | 2. **Forgiving Filters**: Users almost always want case-insensitive, partial matching. For filters, prefer `.includes()` over `===` unless an exact match is clearly requested. (e.g. `String(row['Periods'] || '').toLowerCase().includes('p4')`).
+     |                                                                                                                        ^
+  70 |
+  71 | ## When to Use Apply Blocks
+  72 | - User says "filter art majors" → Keep rows using \`\`\`apply with action "filter_rows" {
+  page: '/api/chat'
+}
+ POST /api/chat 500 in 302ms
+ ✓ Compiled in 33ms
+ ✓ Compiled in 32ms
+ ✓ Compiled in 30ms
+ ✓ Compiled /dashboard in 13ms
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/api/chat/[__metadata_id__]/route/app-paths-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/app/dashboard/page/app-build-manifest.json'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
+[Error: ENOENT: no such file or directory, open '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/SRIRAM/.gemini/antigravity/scratch/sheetai-pro/.next/server/pages/_app/build-manifest.json'
+}
