@@ -124,31 +124,22 @@ function ChatMessage({ role, content, onApply, editHeaders, editRows }: { role: 
       }
       if (part.startsWith("```apply")) {
         // Robust extraction of JSON from the codeblock
-        const lines = part.trim().split("\n");
-        if (lines[0].startsWith("```")) lines.shift();
-        if (lines.length > 0 && lines[lines.length - 1].startsWith("```")) lines.pop();
+        let applyJson = part.replace(/^```apply\n?/, "").replace(/```$/, "").trim();
         
-        let applyJson = lines.join("\n").trim();
+        // AI Formatting Fixes
+        applyJson = applyJson.replace(/[“”]/g, '"').replace(/[‘’]/g, "'"); // Fix smart quotes
+        applyJson = applyJson.replace(/\\(?!["\\/bfnrtu])/g, "\\\\"); // Fix unescaped backslashes (e.g. \d)
         
-        // Extract the JSON object by finding matching braces (handles nested objects)
+        // Extract the JSON object reliably
         const firstBrace = applyJson.indexOf("{");
-        if (firstBrace !== -1) {
-          let depth = 0;
-          let lastBrace = -1;
-          for (let ci = firstBrace; ci < applyJson.length; ci++) {
-            if (applyJson[ci] === "{") depth++;
-            else if (applyJson[ci] === "}") { depth--; if (depth === 0) { lastBrace = ci; break; } }
-          }
-          if (lastBrace > firstBrace) {
-            applyJson = applyJson.substring(firstBrace, lastBrace + 1);
-          }
+        const lastBrace = applyJson.lastIndexOf("}");
+        if (firstBrace !== -1 && lastBrace !== -1 && lastBrace >= firstBrace) {
+          applyJson = applyJson.substring(firstBrace, lastBrace + 1);
         }
 
         // Clean up common AI mistakes before parsing
-        // 1. Remove trailing commas before closing braces
-        applyJson = applyJson.replace(/,\s*}/g, "}");
-        // 2. Remove JS-style comments
-        applyJson = applyJson.replace(/\/\/.*$/gm, "");
+        applyJson = applyJson.replace(/,\s*}/g, "}"); // trailing commas
+        applyJson = applyJson.replace(/\/\/.*$/gm, ""); // comments
         
         // Try to parse as JSON, with multiple fallback strategies
         let parsedAction: ApplyAction | null = null;
@@ -157,23 +148,23 @@ function ChatMessage({ role, content, onApply, editHeaders, editRows }: { role: 
         try {
           parsedAction = JSON.parse(applyJson);
         } catch {
-          // Strategy 2: Try to fix single quotes → double quotes (AI sometimes uses single quotes)
+          // Strategy 2: Try to fix single quotes → double quotes
           try {
             const fixed = applyJson.replace(/'/g, '"');
             parsedAction = JSON.parse(fixed);
           } catch {
             // Strategy 3: Regex extraction as absolute last resort
             try {
-              const actionMatch = applyJson.match(/"action"\s*:\s*"([^"]+)"/);
-              const colMatch = applyJson.match(/"column_name"\s*:\s*"([^"]+)"/);
-              const jsExprMatch = applyJson.match(/"javascript_expression"\s*:\s*"((?:[^"\\]|\\.)*)"/);
-              const condMatch = applyJson.match(/"condition_expression"\s*:\s*"((?:[^"\\]|\\.)*)"/);
-              const oldNameMatch = applyJson.match(/"old_name"\s*:\s*"([^"]+)"/);
-              const newNameMatch = applyJson.match(/"new_name"\s*:\s*"([^"]+)"/);
+              const actionMatch = applyJson.match(/"action"\s*:\s*"([^"]+)"/i);
+              const colMatch = applyJson.match(/"column_name"\s*:\s*"([^"]+)"/i);
+              const jsExprMatch = applyJson.match(/"javascript_expression"\s*:\s*"((?:[^"\\]|\\.)*)"/i);
+              const condMatch = applyJson.match(/"condition_expression"\s*:\s*"((?:[^"\\]|\\.)*)"/i);
+              const oldNameMatch = applyJson.match(/"old_name"\s*:\s*"([^"]+)"/i);
+              const newNameMatch = applyJson.match(/"new_name"\s*:\s*"([^"]+)"/i);
               
               if (actionMatch) {
                 parsedAction = {
-                  action: actionMatch[1] as ApplyAction["action"],
+                  action: actionMatch[1].toLowerCase() as ApplyAction["action"],
                   ...(colMatch && { column_name: colMatch[1] }),
                   ...(jsExprMatch && { javascript_expression: jsExprMatch[1].replace(/\\"/g, '"') }),
                   ...(condMatch && { condition_expression: condMatch[1].replace(/\\"/g, '"') }),
@@ -391,7 +382,7 @@ export default function DashboardPage() {
   // User / File State
   const [userEmail, setUserEmail] = useState("");
   const [userId, setUserId] = useState("");
-  const [credits, setCredits] = useState(100);
+  const [credits, setCredits] = useState(0);
   const [files, setFiles] = useState<FileRecord[]>([]);
   const [activeFileId, setActiveFileId] = useState<string | null>(null);
   const [parsedData, setParsedData] = useState<ParsedFileData | null>(null);

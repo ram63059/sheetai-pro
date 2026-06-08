@@ -92,7 +92,7 @@ export async function parseFile(file: File): Promise<ParsedFileData> {
  */
 export function generateDataContext(
   data: ParsedFileData,
-  maxSampleRows: number = 20
+  maxSampleRows: number = 5000
 ): string {
   const sampleRows = data.rows.slice(0, maxSampleRows);
 
@@ -119,15 +119,15 @@ export function generateDataContext(
   context += `- Total columns: ${data.totalColumns}\n`;
   context += `- Columns: ${columnTypes.join(", ")}\n`;
 
-  // Include sample data so the AI can see actual values and write accurate expressions
-  const previewRows = sampleRows.slice(0, 5);
+  // Include data so the AI can see actual values and write accurate expressions or answer queries
+  const previewRows = sampleRows;
   if (previewRows.length > 0) {
-    context += `\n## Sample Data (first ${previewRows.length} rows)\n`;
+    context += `\n## Spreadsheet Data (up to ${previewRows.length} rows)\n`;
     context += `| ${data.headers.join(" | ")} |\n`;
     context += `| ${data.headers.map(() => "---").join(" | ")} |\n`;
     for (const row of previewRows) {
       const cells = data.headers.map((_, i) => {
-        const val = (row[i] || "").replace(/\|/g, "\\|").substring(0, 60);
+        const val = (row[i] || "").replace(/\|/g, "\\|").substring(0, 100);
         return val || "(empty)";
       });
       context += `| ${cells.join(" | ")} |\n`;
